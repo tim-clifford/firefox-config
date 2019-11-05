@@ -1,0 +1,158 @@
+@import url("userChrome.css");
+
+/* Removes white loading page */
+@-moz-document url(about:blank), url(about:newtab), url(about:home) {
+		html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
+			background: var(--mff-bg) !important;
+		}
+	}
+
+
+	/* Hide scrollbar */
+
+	:root{
+		scrollbar-width: none !important;
+	}
+
+
+	@-moz-document url(about:privatebrowsing) {
+
+	:root{
+		scrollbar-width: none !important;
+	}
+}
+/* Tridactyl {{{ */
+:root {
+	/* Generic */
+	--tridactyl-font-family: monospace;
+	--tridactyl-font-family-sans: sans-serif;
+	--tridactyl-font-size: 12pt;
+	--tridactyl-small-font-size: 12px;
+	--tridactyl-bg: #282a36 !important;
+	--tridactyl-fg: #f8f8f2 !important;
+	--tridactyl-logo: url("data:image/png;base64,REPLACE_ME_WITH_BASE64_TRIDACTYL_LOGO");
+	--tridactyl-scrollbar-color: auto;
+
+	/* Mode indicator */
+	--tridactyl-status-font-family: var(--tridactyl-font-family) !important;
+	--tridactyl-status-font-size: var(--tridactyl-small-font-size) !important;
+	--tridactyl-status-bg: var(--tridactyl-bg) !important;
+	--tridactyl-status-fg: var(--tridactyl-fg) !important;
+	--tridactyl-status-border: 1px #44475a !important;
+	--tridactyl-status-border-radius: 2px;
+
+	/* Search highlight */
+	--tridactyl-search-highlight-color: #9372c2 !important;
+
+	/* Hinting */
+
+	/* Hint character tags */
+	--tridactyl-hintspan-font-family: var(--tridactyl-font-family-sans) !important;
+	--tridactyl-hintspan-font-size: var(--tridactyl-small-font-size) !important;
+	--tridactyl-hintspan-font-weight: bold;
+	--tridactyl-hintspan-fg: #f8f8f2 !important;
+	--tridactyl-hintspan-bg: #44475a !important;
+	--tridactyl-hintspan-border-color: ButtonShadow;
+	--tridactyl-hintspan-border-width: 0px;
+	--tridactyl-hintspan-border-style: solid;
+	--tridactyl-hintspan-js-background: hsla(0, 0%, 65%);
+
+	/* Element highlights */
+	--tridactyl-hint-active-fg: var(--tridactyl-fg) !important;
+	--tridactyl-hint-active-bg: #88ff00 !important;
+	--tridactyl-hint-active-outline: 1px solid #cc0000;
+
+	--tridactyl-hint-bg: rgba(255, 255, 0, 0.25);
+	--tridactyl-hint-outline: 1px solid #8f5902;
+
+	/* :viewsource */
+	--tridactyl-vs-bg: var(--tridactyl-bg) !important;
+	--tridactyl-vs-fg: var(--tridactyl-fg) !important;
+	--tridactyl-vs-font-family: var(--tridactyl-font-family) !important;
+
+	/*commandline*/
+
+	--tridactyl-cmdl-bg: var(--tridactyl-bg) !important;
+	--tridactyl-cmdl-fg: var(--tridactyl-fg) !important;
+	--tridactyl-cmdl-line-height: 1.5;
+	--tridactyl-cmdl-font-family: monospace;
+	--tridactyl-cmdl-font-size: 9pt;
+
+	/*completions*/
+
+	--tridactyl-cmplt-option-height: 1.4em;
+	--tridactyl-cmplt-fg: var(--tridactyl-fg) !important;
+	--tridactyl-cmplt-bg: var(--tridactyl-bg) !important;
+	--tridactyl-cmplt-font-size: 10pt;
+	--tridactyl-cmplt-font-family: monospace;
+	/* i don't think 0.5px is redered */
+	--tridactyl-cmplt-border-top: 1px solid grey;
+
+	/* need a better way for naming variables 
+	 *
+		- .Properties for .HistoryCompletionSource table
+		- .Properties for .BmarkCompletionSource table
+
+	*/
+
+	/*sectionHeader*/
+
+	--tridactyl-header-first-bg:	#44475a !important;
+	--tridactyl-header-second-bg: #44475a !important;
+	--tridactyl-header-third-bg:	#44475a !important;
+	/* eg. What if I dont want liner-gradient as bg?
+	 *
+	 * :root .sectionHeader { background: blue; }
+	 *
+	 * ????
+	 */
+
+	--tridactyl-header-font-weight: bold;
+	/* i don't think 0.5px is redered */
+	--tridactyl-header-border-bottom: 1px solid bottom;
+
+	/*url style*/
+
+	--tridactyl-url-text-decoration: none;
+	--tridactyl-url-fg: #1f9947 !important;
+	--tridactyl-url-bg: var(--tridactyl-bg) !important;
+	--tridactyl-url-cursor: pointer;
+
+	--tridactyl-photon-colours-in-content-link-color: #8be9fd !important;
+
+	/*option focused*/
+
+	--tridactyl-of-fg: var(--tridactyl-fg) !important;
+	--tridactyl-of-bg: #9372c2 !important;
+
+	/*new tab spoiler box*/
+	--tridactyl-highlight-box-bg: #44475a !important;
+	--tridactyl-highlight-box-fg: var(--tridactyl-fg) !important;
+
+	--tridactyl-private-window-icon-url: url("chrome://browser/skin/privatebrowsing/private-browsing.svg");
+
+	--tridactyl-container-fingerprint-url: url("resource://usercontext-content/fingerprint.svg");
+	--tridactyl-container-briefcase-url: url("resource://usercontext-content/briefcase.svg");
+	--tridactyl-container-dollar-url: url("resource://usercontext-content/dollar.svg");
+	--tridactyl-container-cart-url: url("resource://usercontext-content/cart.svg");
+	--tridactyl-container-circle-url: url("resource://usercontext-content/circle.svg");
+	--tridactyl-container-gift-url: url("resource://usercontext-content/gift.svg");
+	--tridactyl-container-vacation-url: url("resource://usercontext-content/vacation.svg");
+	--tridactyl-container-food-url: url("resource://usercontext-content/food.svg");
+	--tridactyl-container-fruit-url: url("resource://usercontext-content/fruit.svg");
+	--tridactyl-container-pet-url: url("resource://usercontext-content/pet.svg");
+	--tridactyl-container-tree-url: url("resource://usercontext-content/tree.svg");
+	--tridactyl-container-chill-url: url("resource://usercontext-content/chill.svg");
+
+	--tridactyl-container-color-blue: #37adff !important;
+	--tridactyl-container-color-turquoise: #00c79a !important;
+	--tridactyl-container-color-green: #51cd00 !important;
+	--tridactyl-container-color-yellow: #ffcb00 !important;
+	--tridactyl-container-color-orange: #ff9f00 !important;
+	--tridactyl-container-color-red: #ff613d !important;
+	--tridactyl-container-color-pink: #ff4bda !important;
+	--tridactyl-container-color-purple: #af51f5 !important;
+
+	--tridactyl-externaledit-bg: var(--tridactyl-logo) no-repeat center;
+}
+/* }}} */
