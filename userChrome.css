@@ -230,13 +230,13 @@ width: 50% !important;
 }
 
 #back-button {
-	display: none !important;
-	/*list-style-image: url("left-arrow.svg") !important;*/
+	/*display: none !important;*/
+	list-style-image: url("left-arrow.svg") !important;
 }
 
 #forward-button {
-	display: none !important;
-	/*list-style-image: url("right-arrow.svg") !important;*/
+	/*display: none !important;*/
+	list-style-image: url("right-arrow.svg") !important;
 }
 
 toolbar {
