@@ -3,10 +3,10 @@
 	/* Minimal Functional Fox variables*/
 	--mff-bg: #282a36;
 	--mff-icon-color: #6272a4;
-	--mff-nav-toolbar-padding: 8px;
+	--mff-nav-toolbar-padding: 2px;
 	--mff-sidebar-bg: var(--mff-bg);
 	--mff-sidebar-color: #f8f8f2;
-	--mff-tab-border-radius: 16px;
+	--mff-tab-border-radius: 0px;
 	--mff-tab-color: #f8f8f2;
 	--mff-tab-font-family: "Cantarell", sans;
 	--mff-tab-font-size: 11pt;
@@ -77,7 +77,7 @@
 }
 
 .tab-close-button {
-	display: none !important;
+	/*display: none !important;*/
 }
 
 .tab-text {
@@ -124,7 +124,7 @@ hbox.tab-content[pinned=true] .tab-text {
 	display: flex;
 	overflow: hidden;
 	justify-content: center;
-width: 50% !important;
+	width: 50% !important;
 	max-width: 50% !important;
 	min-width: 50% !important;
 }
