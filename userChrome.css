@@ -1,7 +1,14 @@
+/* Tridactyl (set early to avoid flashing) */
+:root {
+    --tridactyl-bg: #22232d;
+    --tridactyl-fg: #f8f8f2;
+}
+
+/* Minimal Functional Fox {{{ */
 :root {
 
 	/* Minimal Functional Fox variables*/
-	--mff-bg: #282a36;
+	--mff-bg: #22232d;
 	--mff-icon-color: #6272a4;
 	--mff-nav-toolbar-padding: 2px;
 	--mff-sidebar-bg: var(--mff-bg);
@@ -12,7 +19,7 @@
 	--mff-tab-font-size: 11pt;
 	--mff-tab-font-weight: 400;
 	--mff-tab-height: 32px;
-	--mff-tab-pinned-bg: #282a36;
+	--mff-tab-pinned-bg: #22232d;
 	--mff-tab-pinned-fg: #f8f8f2;
 	--mff-tab-selected-bg: #44475a;
 	--mff-tab-selected-fg: #f8f8f2;
@@ -40,7 +47,7 @@
 	--urlbar-separator-color: transparent !important;
 }
 
-/*
+/* Tabs {{{
 	 _____ _   ___ ___
 	|_   _/_\ | _ ) __|
 	  | |/ _ \| _ \__ \
@@ -141,12 +148,12 @@ hbox.tab-content[pinned=true] .tab-text {
 .tabbrowser-tab {
 	border-radius: var(--mff-tab-border-radius) !important;
 	border-width: 0;
-	height: var(--mff-tab-height) !important;
-	margin-bottom: 4px !important;
-	margin-inline-end: 4px !important;
-	margin-top: 4px !important;
-	max-height: var(--mff-tab-height) !important;
-	min-height: var(--mff-tab-height) !important;
+	height: 32px !important;
+	margin-bottom: 2px !important;
+	margin-inline-end: 2px !important;
+	margin-top: 0px !important;
+	max-height: 32px !important;
+	min-height: 28px !important;
 }
 
 .tabbrowser-tab[soundplaying="true"] {
@@ -155,6 +162,9 @@ hbox.tab-content[pinned=true] .tab-text {
 
 #tabs-newtab-button {
 	list-style-image: url("add.svg") !important;
+	width: 28px;
+	margin-top: 4px !important;
+	margin-bottom: 2px !important;
 	opacity: 0.7;
 }
 
@@ -162,7 +172,8 @@ hbox.tab-content[pinned=true] .tab-text {
 	display: none !important;
 }
 
-/*
+/* }}}
+   Toolbar {{{
 	 _____ ___   ___  _    ___   _   ___
 	|_   _/ _ \ / _ \| |  | _ ) /_\ | _ \
 	  | || (_) | (_) | |__| _ \/ _ \|   /
@@ -290,7 +301,7 @@ toolbar#nav-bar {
 }
 
 toolbar#nav-bar {
-	padding: 4px !important;
+	padding: 0px !important;
 }
 
 #urlbar {
@@ -314,7 +325,8 @@ toolbarbutton {
 }
 
 
-/*
+/* }}}
+   Sidebar {{{
 	 ___ ___ ___  ___ ___   _   ___
 	/ __|_ _|   \| __| _ ) /_\ | _ \
 	\__ \| || |) | _|| _ \/ _ \|   /
@@ -350,8 +362,8 @@ image#sidebar-icon {
 	display: none;
 }
 
-
-/*
+/* }}}
+   Arrowpanel {{{
 	   _   ___ ___  _____      _____  _   _  _ ___ _
 	  /_\ | _ \ _ \/ _ \ \    / / _ \/_\ | \| | __| |
 	 / _ \|   /   / (_) \ \/\/ /|  _/ _ \| .` | _|| |__
@@ -366,3 +378,140 @@ image#sidebar-icon {
 toolbarseparator {
 	display: none;
 }
+/* }}}
+ * }}} */
+/* ff-vertical-tabs {{{ */
+/* Linux & macOS specific styles {{{ */
+@media (-moz-gtk-csd-available), (-moz-mac-big-sur-theme: 0), (-moz-mac-big-sur-theme: 1) {
+    #TabsToolbar:not([customizing="true"]) {
+		  visibility: collapse !important;
+      }
+
+    #toolbar-menubar {
+          padding-top: 0px !important;
+      }
+
+    #toolbar-menubar {
+          padding-top: 0px !important;
+      }
+
+    #nav-bar {
+          padding-left: 80px;
+      }
+
+    #TabsToolbar .titlebar-buttonbox-container {
+          visibility: visible !important;
+          position: absolute;
+          top: 12px;
+          left: 0px;
+      }
+
+    .titlebar-buttonbox-container {
+          display: block;
+      }
+
+    .titlebar-button > .toolbarbutton-icon {
+          height: 13x !important;
+          min-height: 13px !important;
+          width: 13px !important;
+          min-width: 13px !important;
+      }
+
+    .titlebar-button {
+          padding-left: 6px !important;
+          padding-right: 6px !important;
+          padding-top: 6px !important;
+      }
+
+    .titlebar-placeholder[type="pre-tabs"] {
+          width: 120px !important;
+      }
+
+    .titlebar-buttonbox-container {
+          -moz-box-ordinal-group: 0;
+      }
+}
+/* }}}
+   General styles {{{ */
+#browser {
+    position: relative;
+}
+#sidebar-box[sidebarcommand*="tabcenter"] #sidebar-header {
+    visibility: collapse;
+    display: none;
+}
+
+#sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) {
+    display: block;
+    position: absolute;
+    min-width: 48px;
+    max-width: 48px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    border-right: 1px solid var(--sidebar-border-color);
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+}
+
+[sidebarcommand*="tabcenter"] #sidebar,
+#sidebar-box[sidebarcommand*="tabcenter"]:hover {
+    min-width: 10vw !important;
+    width: 30vw !important;
+    max-width: 200px !important;
+    z-index: 10 !important;
+}
+
+@media (width >= 1200px) {
+    [sidebarcommand*="tabcenter"] #sidebar,
+    #sidebar-box[sidebarcommand*="tabcenter"]:hover {
+        max-width: 250px !important;
+    }
+}
+
+[sidebarcommand*="tabcenter"] ~ #sidebar-splitter {
+    display: none;
+}
+
+[sidebarcommand*="tabcenter"] #sidebar {
+    max-height: 100%;
+    height: 100%;
+}
+
+#sidebar-box[sidebarcommand*="tabcenter"]:not([hidden]) ~ #appcontent {
+    margin-left: 48px;
+}
+
+#main-window[inFullscreen][inDOMFullscreen] #appcontent {
+    margin-left: 0;
+}
+
+#main-window[inFullscreen] #sidebar {
+    height: 100vh;
+}
+
+[sidebarcommand*="tabcenter"] #sidebar-header {
+    background: #0C0C0D;
+    border-bottom: none !important;
+}
+
+[sidebarcommand*="tabcenter"] ~ #sidebar-splitter {
+    border-right-color: #0C0C0D !important;
+    border-left-color: #0C0C0D !important;
+}
+
+[sidebarcommand*="tabcenter"] #sidebar-switcher-target,
+[sidebarcommand*="tabcenter"] #sidebar-close {
+    filter: invert(100%);
+}
+
+@media (max-width: 630px) {
+    #urlbar-container {
+        min-width: 100% !important;
+    }
+    #menubar-items {
+        display: none !important;
+    }
+}
+/* }}}
+ * }}} */
