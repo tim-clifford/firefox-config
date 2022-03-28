@@ -1,5 +1,28 @@
 @import url("userChrome.css");
 
+/* Remove annoying reddit cookie bar and fix RES */
+.reddit-infobar.cookie-infobar {
+	display: none !important;
+}
+.res-selected, .entry.res-selected, .entry.res-selected .md-container {
+	background-color: #44475a !important;
+}
+.res-commentBoxes .comment .comment,
+.res-commentBoxes .comment .comment .comment .comment,
+.res-commentBoxes .comment .comment .comment .comment .comment .comment,
+.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment,
+.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment {
+	background-color:#282a36 !important;
+}
+.res-commentBoxes .comment,
+.res-commentBoxes .comment .comment .comment,
+.res-commentBoxes .comment .comment .comment .comment .comment,
+.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment,
+.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment .comment {
+	background-color:#2e313e !important
+}
+
+
 /* Removes white loading page */
 @-moz-document url(about:blank), url(about:newtab), url(about:home) {
 		html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
