@@ -1,3 +1,9 @@
+
+
+| :exclamation:  | This is a mirror of [https://git.sr.ht/~tim-clifford/firefox-config](https://git.sr.ht/~tim-clifford/firefox-config). Please refrain from using GitHub's issue and PR system.  |
+|----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+
 # Tim Clifford's firefox config
 
 My own firefox config, based on
