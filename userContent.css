@@ -1,45 +1,115 @@
 @import url("userChrome.css");
 
-/* Remove annoying reddit cookie bar and fix RES */
-.reddit-infobar.cookie-infobar {
-	display: none !important;
-}
-.res-selected, .entry.res-selected, .entry.res-selected .md-container {
-	background-color: #44475a !important;
-}
-.res-commentBoxes .comment .comment,
-.res-commentBoxes .comment .comment .comment .comment,
-.res-commentBoxes .comment .comment .comment .comment .comment .comment,
-.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment,
-.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment {
-	background-color:#282a36 !important;
-}
-.res-commentBoxes .comment,
-.res-commentBoxes .comment .comment .comment,
-.res-commentBoxes .comment .comment .comment .comment .comment,
-.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment,
-.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment .comment {
-	background-color:#2e313e !important
+/* Defaults that will be overriden by most sites */
+body {
+	background: #282a36;
+	color: #f8f8f2;
 }
 
+a {
+	color: rgba(189, 147, 249, 1);
+	/*border-bottom: 2px solid rgba(189, 147, 249, 1);*/
+	-webkit-transition: all .3s linear;
+	transition: all .3s linear;
+	text-decoration: none;
+}
+a:hover {
+	color: rgba(189, 147, 249, .7);
+}
+
+#cookie-bar {
+	display: none !important;
+}
+
+.infobar.listingsignupbar {
+	display: none !important;
+}
+
+/* specific website tweaks */
+
+/*@-moz-document url-prefix(https://peertube.co.uk) {*/
+	/*.card-body,*/
+	/*.account-info,*/
+	/*.channel-info,*/
+	/*.sub-menu,*/
+	/*.channel {*/
+		/*background: #282a36 !important;*/
+	/*}*/
+/*}*/
+
+@-moz-document url-prefix(https://rss.clifford.lol) {
+	.entry-content a {
+		color: rgba(189, 147, 249, 1) !important;
+		-webkit-transition: all .3s linear !important;
+		transition: all .3s linear !important;
+		text-decoration: none !important;
+	}
+	.entry-content a:hover {
+		color: rgba(189, 147, 249, .7) !important;
+	}
+}
+
+@-moz-document url-prefix(https://music.apple.com) {
+	/* Apple Color Emoji is broken */
+	* {
+		font-family: SF Pro, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+	}
+}
+
+@-moz-document domain(reddit.com) {
+	/* Ad platforms HATE this one weird trick */
+	.promoted {
+		display: none !important;
+	}
+
+	.premium-banner {
+		display: none !important;
+	}
+
+	/* Remove annoying reddit cookie bar and fix RES */
+	.reddit-infobar.cookie-infobar {
+		display: none !important;
+	}
+
+	/* Remove signup bar */
+	.listingsignupbar {
+		display: none !important;
+	}
+
+	/* Comment colors */
+	.res-selected, .entry.res-selected, .entry.res-selected .md-container {
+		background-color: #44475a !important;
+	}
+	.res-commentBoxes .comment .comment,
+	.res-commentBoxes .comment .comment .comment .comment,
+	.res-commentBoxes .comment .comment .comment .comment .comment .comment,
+	.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment,
+	.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment {
+		background-color:#282a36 !important;
+	}
+	.res-commentBoxes .comment,
+	.res-commentBoxes .comment .comment .comment,
+	.res-commentBoxes .comment .comment .comment .comment .comment,
+	.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment,
+	.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment .comment {
+		background-color:#2e313e !important
+	}
+}
 
 /* Removes white loading page */
 @-moz-document url(about:blank), url(about:newtab), url(about:home) {
-		html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
-			background: var(--mff-bg) !important;
-		}
+	html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
+		background: var(--mff-bg) !important;
 	}
+}
 
+/* Hide scrollbar */
 
-	/* Hide scrollbar */
+:root{
+	scrollbar-width: none !important;
+}
 
-	:root{
-		scrollbar-width: none !important;
-	}
-
-
-	@-moz-document url(about:privatebrowsing) {
-
+@-moz-document url(about:privatebrowsing) {
 	:root{
 		scrollbar-width: none !important;
 	}
